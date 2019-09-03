@@ -103,7 +103,7 @@ npm riun test
 }
 ```
 
-最后再次运行`yarn fugai` or `npm run fugai`
+最后再次运行`yarn test` or `npm run test`
 
 ## 持续集成和 Travis CI
 
