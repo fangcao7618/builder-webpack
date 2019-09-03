@@ -2,26 +2,20 @@ const assert = require("assert");
 describe("webpack.base.js test case", () => {
     const baseConfig = require("../../lib/webpack.base.js");
 
-    console.log(
-        baseConfig.entry.index.indexOf(
-            "builder-webpack/test/smoke/template/src/index/index.js"
-        ) > -1,
-        baseConfig.entry.search.indexOf(
-            "builder-webpack/test/smoke/template/src/search/index.js"
-        ) > -1
-    );
     it("entry", () => {
         assert.equal(
             baseConfig.entry.index.indexOf(
                 "builder-webpack/test/smoke/template/src/index/index.js"
             ) > -1,
-            true
+            true,
+            "不相等"
         );
         assert.equal(
             baseConfig.entry.search.indexOf(
                 "builder-webpack/test/smoke/template/src/search/index.js"
-            ),
-            true
+            ) > -1,
+            true,
+            "不相等"
         );
     });
 });
