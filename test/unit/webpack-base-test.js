@@ -2,14 +2,26 @@ const assert = require("assert");
 describe("webpack.base.js test case", () => {
     const baseConfig = require("../../lib/webpack.base.js");
 
+    console.log(
+        baseConfig.entry.index.indexOf(
+            "builder-webpack/test/smoke/template/src/index/index.js"
+        ) > -1,
+        baseConfig.entry.search.indexOf(
+            "builder-webpack/test/smoke/template/src/search/index.js"
+        ) > -1
+    );
     it("entry", () => {
         assert.equal(
-            baseConfig.entry.index,
-            "/Users/fangcao/Documents/study/study_webpack/testProject/builder-webpack/test/smoke/template/src/index/index.js"
+            baseConfig.entry.index.indexOf(
+                "builder-webpack/test/smoke/template/src/index/index.js"
+            ) > -1,
+            true
         );
         assert.equal(
-            baseConfig.entry.search,
-            "/Users/fangcao/Documents/study/study_webpack/testProject/builder-webpack/test/smoke/template/src/search/index.js"
+            baseConfig.entry.search.indexOf(
+                "builder-webpack/test/smoke/template/src/search/index.js"
+            ),
+            true
         );
     });
 });
